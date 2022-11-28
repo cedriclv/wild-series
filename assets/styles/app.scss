@@ -1,0 +1,25 @@
+$primary: rgb(97, 110, 97);
+$danger: #ff4136;
+
+@import "~bootstrap/scss/bootstrap";
+
+
+$couleur-principale: white;
+
+    $couleur-secondaire: orange;
+
+
+    body {
+
+        color: $couleur-principale;
+
+        background-color : $couleur-secondaire
+
+    }
+
+
+
+// assets/styles/global.scss
+
+// the ~ allows you to reference things in node_modules
+

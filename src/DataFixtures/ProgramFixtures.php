@@ -13,13 +13,14 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 
     public function load(ObjectManager $manager): void
     {
-        for($i = 1; $i<4;$i++){
+        for($i = 1; $i<15;$i++){
             $program = new Program();
             $program->setTitle('program number ' . $i);
             $program->setSynopsis('Synopsis text ' . $i);
             $program->setPoster('poster number ' . $i);
             $program->setTitle('program number ' . $i);
-            $program->setCategory($this->getReference('category_' . CategoryFixtures::CATEGORIES[$i]));
+            $randomCatId = random_int(0,4);
+            $program->setCategory($this->getReference('category_' . CategoryFixtures::CATEGORIES[$randomCatId]));
             $manager->persist($program);
         }
         $manager->flush();

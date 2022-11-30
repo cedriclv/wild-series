@@ -4,4 +4,15 @@
 
 {% block body %}
 <h1>{{ website }} index</h1>
+
+<ul>
+{% for program in programs %}
+    <li>
+        {{ program.title}} // {{ program.category.name}} //
+        <a href="{{path('program_',{id : program.id})}}">Voir details</a> 
+    </li>    
+{% endfor %}
+</ul>
+<a href="{{path('app_index')}}">Retour Accueil</a>
+
 {% endblock %}

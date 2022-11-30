@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Wild Series{% endblock %}
+{% block body %}
+
+<ul>
+
+{% for program in programs %}
+<li>
+    <div>{{program.id}}</div>
+    <div>{{program.title}}</div>
+    <div>{{program.synopsis}}</div>
+    <a href={{ path('program_',{id : program.id}) }}>Voir programme</a>
+</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

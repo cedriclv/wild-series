@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wild Series{% endblock %}
+
+{% block body %}
+<h1>{{ website }} Categories</h1>
+
+<ul>
+{% for category in categories %}
+    <li>
+        {{ category.id}} // 
+        {{ category.name}} //
+        <a href={{ path('category_show', {categoryName : category.name}) }}>Voir Categorie</a>
+    </li>    
+{% endfor %}
+</ul>   
+<a href="{{path('app_index')}}">Retour Accueil</a>
+
+{% endblock %}
